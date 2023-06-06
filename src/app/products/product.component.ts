@@ -1,6 +1,7 @@
 import { Component} from '@angular/core';
 
 declare const getRandomNumbers:any;
+declare const getPageNumbers:any;
 
 @Component({
     selector: 'app-product',
@@ -16,6 +17,12 @@ declare const getRandomNumbers:any;
             {{empl.name}},
             {{empl.department}}
         </li>
+        <div>All Pages</div>
+        <div *ngFor="let x of pNum | paginate: {itemsPerPage:itemsToDisplay, currentPage:page}">
+            {{x}}
+        </div>
+
+        <pagination-controls (pageChange)="pageChanged($event)"></pagination-controls>
     `,
     styles: ['div {font-weight:bolder; color:darkgreen;}', 'li  {font-weight:bolder; color:red;}']
 })
@@ -23,6 +30,13 @@ declare const getRandomNumbers:any;
 export class ProductComponent{
     showDiv=true;
     rNum = <[]>getRandomNumbers();
+    pNum = <[]>getPageNumbers();
+    //pagination
+    page: Number = 1;
+    itemsToDisplay: Number = 10;
+    pageChanged(event: any){
+        this.page = event
+    }
     departments = ['Mountain Bicycles', 'Road Bikes', 'Hybrid Bikes', 'Bicycle Pumps']
     employees = [
         {

@@ -6,3 +6,12 @@ const getRandomNumbers = () => {
     }
     return rNum;
 }
+
+const getPageNumbers = () => {
+    let rNum = [];
+    for (let i = 0; i < 100; i++) {
+        
+        rNum.push(i);
+    }
+    return rNum;
+}
