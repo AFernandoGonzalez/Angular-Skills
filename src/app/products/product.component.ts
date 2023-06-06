@@ -30,7 +30,9 @@ declare const getPageNumbers:any;
 export class ProductComponent{
     showDiv=true;
     rNum = <[]>getRandomNumbers();
-    pNum = <[]>getPageNumbers();
+    pNum = <[]>getPageNumbers().sort((x:number,y:number)=> {
+        return x-y
+    });
     //pagination
     page: number = 1;
     itemsToDisplay: number = 10;

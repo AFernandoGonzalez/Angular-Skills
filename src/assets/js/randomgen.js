@@ -10,8 +10,8 @@ const getRandomNumbers = () => {
 const getPageNumbers = () => {
     let rNum = [];
     for (let i = 0; i < 100; i++) {
-        
-        rNum.push(i);
+        let rnd = Math.floor((Math.random() * 9999) + 1);
+        rNum.push(rnd);
     }
     return rNum;
 }
