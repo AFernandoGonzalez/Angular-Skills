@@ -32,9 +32,9 @@ export class ProductComponent{
     rNum = <[]>getRandomNumbers();
     pNum = <[]>getPageNumbers();
     //pagination
-    page: Number = 1;
-    itemsToDisplay: Number = 10;
-    pageChanged(event: any){
+    page: number = 1;
+    itemsToDisplay: number = 10;
+    pageChanged(event : any){
         this.page = event
     }
     departments = ['Mountain Bicycles', 'Road Bikes', 'Hybrid Bikes', 'Bicycle Pumps']
