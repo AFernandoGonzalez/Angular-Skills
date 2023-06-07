@@ -1,0 +1,10 @@
+<div id="demo">
+    <p>Home Component</p>
+    <p>My Form</p>
+    <form #customerForm="ngForm" (ngSubmit)="onSubmit(customerForm)">
+        <input type="text" [(ngModel)]="customerName" name="customerName">
+        <input type="text" [(ngModel)]="email" name="eamil">
+        <input type="text" [(ngModel)]="password" name="password">
+        <button type="submit" [disabled]="!customerForm.form.valid">Register</button>
+    </form>
+</div>
